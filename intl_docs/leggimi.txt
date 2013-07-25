@@ -1,0 +1,264 @@
+NewMonthGadget - il nuovo calendario per WPSWizard
+==================================================
+
+Sommario:
+^^^^^^^^^
+    -> Prerequisiti
+    -> Che cos'ä NewMonthGadget?
+    -> A cosa servono i prerequisiti opzionali?
+    -> Installazione
+    -> Aggiornamento
+    -> Voglio personalizzare il calendario!!
+    -> Come ho ottenuto la trasparenza?
+    -> Storia delle modifiche
+    -> Link
+    -> Ringraziamenti
+
+
+Prerequisiti
+^^^^^^^^^^^^
+- WPSWizard 0.5.1+
+- (opzionale) Innotek Font Engine
+- (opzionale) Font "Arial Black" dal pacchetto "MS Core Web Fonts"
+
+
+Che cos'ä NewMonthGadget?
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Si tratta di un calendario sotto forma di gadget per WPSWizard 0.5.1.
+Un gadget ä un piccolo componente che puï essere utilizzato per visualizzare
+informazioni direttamente integrate nel desktop.
+
+Rispetto al calendario incluso con WPSWizard, NewMonthGadget ha un aspetto
+decisamente migliore. Per farsi un'idea dell'aspetto ho incluso nel pacchetto
+due schermate (newcalendar1.png and newcalendar2.png).
+
+L'ispirazione per creare questo calendario mi ä venuta guardando uno dei gadget
+inclusi in Object Desktop per Windows (potete vedere com'ä l'originale aprendo
+l'immagine odnt-july03.jpg).
+
+
+A cosa servono i prerequisiti opzionali?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E' possibile migliorare di molto l'aspetto del calendario (e anche quello di
+tutto il desktop di OS/2 o eCS) installando la Innotek Font Engine. Grazie a
+questo software, infatti, ä possibile abilitare l'antialiasing delle font.
+Raccomando vivamente l'utilizzo di questo software, che migliora sensibilmente
+la leggibilitÖ delle font (vedere il link in fondo a questo file).
+
+Per abilitare l'antialiasing nel calendario ä necessario aggiungere
+"PMSHELL.EXE" tra le applicazioni abilitate all'utilizzo della font engine
+(vedere il link in fondo a questo file per scaricare l'utility Feffer).
+Questo procedimento NON E' SUPPORTATO da Innotek, e potrebbe rendere il vostro
+desktop instabile (io non ho avuto nessun problema).
+
+Raccomando anche l'utilizzo delle "Core Web Fonts" di M$, in quanto sono font
+di ottima qualitÖ e leggibilitÖ. PoichÇ molti siti web utilizzando queste font,
+si otterÖ come piacevole effetto secondario una migliore leggibilitÖ delle
+pagine web.
+
+Se proprio non vi va gió di utilizzare le font di M$, potete sostituire la font
+"Arial Black" con la font "Arial Bold" (ma dovete modificare il codice del
+gadget).
+
+
+Installazione
+^^^^^^^^^^^^^
+E' sufficiente copiare i seguenti file nella cartella dei gadget di WPSWizard
+(sul mio sistema il percorso ä g:\WPSWizard\bin\gadgets):
+
+- NewMonthGadget.cmd
+- NewMonthGadget.xl8
+- gcalendar.gif
+- (opzionale) CleanIni.cmd
+
+Infine create un oggetto che punti a NewMonthGadget.cmd e copiatelo nella
+cartella di avvio.
+
+Il programma CleanIni.cmd puï essere utile se desiderate personalizzare il
+calendario (vedere sotto). Infatti durante il processo di personalizzazione vi
+puï capitare di effettuare manovre errate che non riuscite pió a correggere: in
+questo caso tramite CleanIni potete ripulire il file INI di WPSWizard cosç da
+riportare il calendario alla sua configurazione originale.
+Il file INI di WPSWizard di solito si trova nella vostra cartella %HOME%.
+
+
+Aggiornamento
+^^^^^^^^^^^^^
+Copiate i nuovi file sovrascrivendo quelli vecchi. Se avete installata una
+vecchia versione del calendario potrebbe essere necessario utilizzare CleanIni
+per abilitare l'utilizzo della nuova font (vedere le modifiche del 2006-02-21
+pió sotto).
+
+E' possibile configurare il calendario per fare iniziare la
+settimana con il giorno di domenica, invece del lunedç: anche questo ä
+descritto nella storia delle modifiche pió sotto (2006-03-13).
+
+Se non volete la colonna con il numero progressivo della settimana, potete
+utilizzare la versione "-noweek" del gadget (assieme al relativo file .xl8).
+
+
+Voglio personalizzare il calendario!!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E' possibile personalizzare il calendario anche senza conoscere il linguaggio
+rexx e le caratteristiche dei gadget, utilizzando semplicemente il drag'n'drop
+di font e colori.
+
+Prima di tutto, ä probabile che vogliate spostare il calendario in un'altra
+posizione sul vostro desktop. Non ä possibile farlo con i metodi tradizionali,
+perchÇ il calendario ä incorporato nel desktop,non ä una finestra indipendente.
+Per spostarlo,premete CTRL e cliccate col tasto sinistro sul calendario. Questo
+farÖ comparire una finestra sopra al calendario, che potete spostare come
+desiderate. Una volta trovata la posizione desiderata, premete ancora CTRL e
+cliccate sulla finestra: il calendario ä ora spostato.
+
+Per fare altre personalizzazioni il metodo ä sempre quello del CTRL+Click sul
+calendario. Cliccando ancora con il tasto destro comparirÖ un menó contestuale,
+contenente queste voci:
+
+- Chiudi gadget: per chiudere il calendario (e salvare le personalizzazioni)
+- Sblocca sottoparti: (vedi sotto)
+- Senza bordo, bordo in rilievo, bordo scavato, bordo colorato: disegna un
+  bordo attorno al calendario (nell'immagine newcalendar1.png ad esempio si
+  puï vedere il bordo colorato)
+- Precedente, corrente, prossimo: cambia la visualizzazione del mese
+
+Vediamo adesso come funziona la voce "Sblocca sottoparti": un gadget in realtÖ
+puï essere composto da diverse sottoparti (o "figli"). Nel nostro caso ci sono
+sei figli. Esaminiamoli a partire dall'angolo in alto a sinistra:
+
+   - la data del giorno
+   - il mese
+   - l'ombra del mese
+   - l'anno
+   - l'ombra dell'anno
+   - il calendario vero e proprio
+
+Dopo aver selezionato "sblocca sottoparti", riportate il calendario nello stato
+normale con la combinazione CTRL-Click. A questo punto, facendo CTRL+Click
+nell'area occupata da uno dei figli, potrete modificare direttamente il figlio.
+
+Potete ora muovere o ridimensionare ciascun figlio, oppure trascinarci sopra
+una font o un colore. Quando siete soddisfatti del risultato, facendo ancora
+CTRL+Click sul figlio questi ritornerÖ al suo stato normale. Per riportare
+tutto il gadget alla situazione normale, bisogna fare CTRL+Click su un'area del
+gadget non occupata dai figli (il punto pió facile da trovare ä in basso a
+sinistra), ed invocare il menó contestuale. A questo punto scegliere la voce
+"blocca sottoparti". Attenzione: se non volete perdere le vostre nuove
+personalizzazioni, vi consiglio di chiudere il gadget (sempre tramite il menó
+contestuale) e riaprirlo, cosç da forzare un salvataggio delle impostazioni.
+
+
+Come ho ottenuto la trasparenza?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Risposta semplice: non l'ho ottenuta ;-)
+
+Risposta tecnica: nella schermata newcalendar2.png si puï vedere quel che 
+sembrerebbe un gadget trasparente. In effetti lo sfondo (gcalendar.gif) ha le
+informazioni necessarie alla trasparenza (ä una peculiaritÖ dei file GIF), ma
+la procedura di decodifica delle immagini GIF inclusa nel supporto multimediale
+di OS/2 non supporta la trasparenza. Lo sviluppatore della procedura di
+decodifica per le immagini PNG (altro formato che supporta la trasparenza)
+afferma nel suo "readme" di voler implementare il supporto alla trasparenza in
+una prossima versione. Se cosç sarÖ, modificherï il calendario per utilizzare
+uno sfondo in formato PNG, e cosç finalmente avermo un calendario trasparente!
+L'immagine newcalendar2.png ä ottenuta semplicemente modificando lo sfondo del
+calendario in modo che abbia lo stesso colore del desktop. Anche voi potete
+farlo: basta usare un programma per modificare le immagini GIF e un po' di
+fantasia.
+
+
+Storia delle modifiche
+^^^^^^^^^^^^^^^^^^^^^^
+2006-05-15
+- corretto un bug: il gadget non veniva correttamente aggiornato al cambio del
+  mese
+- aggiunto il gadget "noweek" per quelli che preferiscono non avere la colonna
+  con il numero progressivo della settimana (richiesto da un utente)
+
+2006-03-21
+- aggiunto kit di traduzione: tutte le frasi suscettibili di traduzione sono
+  ora contenute nel file NewMonthGadget.xl8. Se volete aggiungere una nuova
+  traduzione, seguite la struttura attuale del file e aggiungete le nuove
+  frasi.
+- la lingua del gadget viene automaticamente adattata a quella del sistema, se
+  ä tra quelle supportate, in base alla variabile LANG; se la lingua non ä
+  supportata viene automaticamente usato l'inglese
+- aggiunta traduzione italiana
+- adattata la traduzione tedesca al nuovo metodo di traduzione
+- rinominata la cartella "german" in "intl_docs": adesso contiene i file
+  "readme" per le varie lingue
+- spostate le variabili modificabili dall'utente all'inizio del codice del
+  gadget, per rendere pió semplice la personalizzazione
+
+2006-03-13
+- aggiunta possibilitÖ di cambiare il giorno di inizio della settimana
+  (domenica o lunedç). E' necessario cambiare il valore della variabile
+  WeekStart nel file CMD (alla linea 60).
+- aggiunta informazione BuildLevel al gadget
+- aggiunta la certella "backgrounds" per ospitare gli sfondi creati dagli
+  utenti. Al momento contiene un solo sfondo, creato da David Graser.
+  Per usarlo ä necessario rinominarlo come "gcalendar.gif" e poi sovrascrivere
+  l'originale.
+- aggiunta la cartella "german" per ospitare la traduzione tedesca fatta da
+  Rudolf Hîger. Il calendario tradotto ä ancora alla versione 2006-02-21, ma
+  non credo che questo comporti problemi, infatti gli utenti tedeschi non
+  dovrebbero avere bisogno della nuova opzione per cambiare il giorno di inizio
+  della settimana da lunedç a domenica. In futuro spero di implementare un
+  sistema che renda le traduzioni pió semplici, separando il codice dai nomi.
+
+2006-02-21
+- aggiunto il numero della settimana nell'anno (richiesto da un utente)
+- cambiata la font di default del calendario per far spazio alla nuova colonna
+- aggiornate le schermate per mostrare la nuova colonna
+- aggiunta la sezione "Aggiornamento" in questo file
+
+2006-02-09
+- cambiato l'ordine delle voci nel menó contestuale, per renderlo pió intuitivo
+- corretto un errore nel readme.txt inglese
+
+2006-02-07
+- prima release pubblica
+
+2004-03-24
+- prima release ad uso privato
+
+
+Link
+^^^^
+Innotek Font Engine:
+ http://download.innotek.de/ft2lib/InnoTek_FT2LIB_260_Beta1.exe
+
+MS Core Web Fonts Downloader:
+ http://www.ecomstation.org/vitalfiles/MSFONTPACK1_2-fixed.zip
+
+Feffer (Front-End For Font Engine Registry):
+ http://www.os2world.com/forum/Public/Uploads/Post-83-68-feffer_0_9_2.zip (base)
+ http://www.os2world.com/forum/Public/Uploads/Post-83-94-FFR093.ZIP (update)
+
+
+Ringraziamenti
+^^^^^^^^^^^^^^
+Ringrazio Chris Wohlgemuth per lo stupendo WPSWizard, e per tutto l'impegno
+profuso nel migliorare ed estendere OS/2. Questo piccolo gadget vuole essere un
+segno di apprezzamento, e sarÖ probabilmente il primo di una serie.
+Spero che questo ispiri altri programmatori a fare lo stesso... WPSWizard ha
+molte potenzialitÖ inesplorate.
+Chris, ovviamente hai il permesso di includere questo gadget in WPSWizard se lo
+ritieni opportuno.
+
+Ringrazio David Graser per aver creato un nuovo (bellissimo!) sfondo per il
+calendario.
+
+Ringrazio Rudolf Hîger per la traduzione in tedesco.
+
+Ringrazio Serenity Systems per il fantastico eComStation, e per avere regalato
+nuova vita ad OS/2.
+
+Grazie a tutti quelli che utilizzeranno questo calendario. Scrivetemi se lo
+utilizzate, sarei felice di saperlo!
+
+Buon divertimento! ;-)
+
+              Cris
+
+              (criguada _at_ libero .dot. it)

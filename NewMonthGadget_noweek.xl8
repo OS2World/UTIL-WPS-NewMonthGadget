@@ -1,0 +1,47 @@
+;english
+LANG=en_US,en_GB
+January February March April May Jun July August September October November December
+~Unlock children
+~Lock children
+~No Border
+~Border
+~Sunken Border
+~Color Border
+Previous
+Current
+Next
+~Close Gadget
+col1||'  Mo  Tu  We  Th  Fr  Sa</font>'||col2||'  Su</font>'||'<br>'
+col2||'  Su  </font>'||col1||'Mo  Tu  We  Th  Fr  Sa</font>'||'<br>'
+
+;italian
+LANG=it_IT,it_IT_EURO
+Gennaio Febbraio Marzo Aprile Maggio Giugno Luglio Agosto Settembre Ottobre Novembre Dicembre
+~Sblocca sottoparti
+~Blocca sottoparti
+Se~nza bordo
+Bordo in ~rielievo
+Bordo sca~vato
+Bordo c~olorato
+Precedente
+Corrente
+Prossimo
+~Chiudi Gadget
+col1||'  Lu  Ma  Me Gio  Ve  Sa</font>'||col2||'  Do</font>'||'<br>'
+col2||'  Do  </font>'||col1||'Lu  Ma  Me Gio  Ve  Sa</font>'||'<br>'
+
+;german
+LANG=de_DE,de_DE_EURO
+Januar Februar M„rz April Mai Juni Juli August September Oktober November Dezember
+~entsperre Kinder
+~sperre Kinder
+~kein Rand
+~Rand
+~eingesunkener Rand
+~farbiger Rand
+vorheriger Monat
+aktueller Monat
+n„chster Monat
+~Beende Gadget
+col1||'  Mo  Di  Mi  Do  Fr  Sa</font>'||col2||'  So</font>'||'<br>'
+col2||'  So  </font>'||col1||'Mo  Di  Mi  Do  Fr  Sa</font>'||'<br>'

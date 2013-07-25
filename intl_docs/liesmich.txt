@@ -1,0 +1,242 @@
+NewMonthGadget - ein neues cooles Kalender Gadget fr WPSWizard
+=============================================================== 
+
+Inhaltsverzeichnis:
+^^^^^^^^^^^^^^^^^^^
+
+    -> Voraussetungen
+    -> Was ist das NewMonthGadget?
+    -> Warum die optionalen Voraussetungen?
+    -> Installation
+    -> Upgrade
+    -> Ich m”chte das Gadget anpassen!!
+    -> Wie erreichen Sie Transparenz?
+    -> nderungsliste
+    -> Links
+    -> Danksagungen
+    
+    
+Voraussetungen
+^^^^^^^^^^^^^^
+- WPSWizard 0.5.1+ 
+- (optional) Innotek Font Engine 
+- (optional) Arial Black Font vom "MS Core Web Fonts" Paket.
+
+
+Was ist das NewMonthGadget? 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NewMonthGadget ist ein Gadget fr WPSWizard 0.5.1+. Ein Gadget zeigt 
+Displayinformationen an, die im Desktop eingebettet sind.
+
+Verglichen mit dem normalen MonthGadget, das im WPSWizard Paket enthalten ist, 
+sieht dieses Gadget besser aus. Sie k”nnen einen Eindruck davon haben, wenn 
+Sie eines der Screenshots in diesem Paket ansehen (newcalendar1.png und newcalendar2.png). 
+Ich hatte die Inspiration, dieses Gadget anzufertigen, von einem der Gadgets, die 
+im Object Desktop benutzt wurden (Sie k”nnen das Vorbild im odnt-july03.jpg Bild sehen).
+
+
+Warum die optionalen Voraussetungen? 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Sie k”nnen das Aussehen des Gadgets (und das Aussehen Ihres kompletten OS/2 
+oder eCS Desktops) sehr verbessern, indem Sie die Innotek Font Engine  installieren. 
+Dies stellt antialiased Schriften fr OS/2-eCS zur Verfgung.Ich empfehle es Ihnen in hohem 
+Maáe fr die verbesserte  Lesbarkeit der Schriften (weiter unten ist der Download Link).
+
+Bitte beachten Sie, wenn Ihr Gadget gegl„ttete Fonts haben soll, dass Sie "PMSHELL.EXE" 
+in die Liste der erm”glichten Anwendungen in der Font Engine hinzufgen mssen (weiter 
+unten ist ein Download Link zum Feffer Utility). Dies wird NICHT von Innotek UNTERSTšTZT 
+und kann zu Instabilit„t fhren (aber ich habe nie Probleme damit gehabt).
+
+Ich empfehle auch, die M$ Core Web Fonts fr das verbesserte Schriften rendering und 
+lesbarkeit zu verwenden (weiter unten ist ein Download Link). Sie finden viele 
+Webseiten im Internet, die diese Schriftarten verwenden, so haben Sie dann eine bessere 
+Darstellung dieser Seiten.
+
+Wenn Sie  die Core Web Fonts nicht benutzen m”chten, k”nnen Sie den "Arial black" Font, 
+der im Gadget benutzt wird, durch "Arial Bold" ersetzen (aber der Gadgetcode muss von 
+Ihnen editiert werden).
+
+
+Installation
+^^^^^^^^^^^^ 
+Kopieren Sie einfach die folgenden Dateien zum WPSWizard Gadgetverzeichnis (auf meinem 
+System ist dieses: G:\WPSWizard\bin\gadgets):
+
+- NewMonthGadget.cmd
+- NewMonthGagdet.xl8
+- gcalendar.gif 
+- (optional) CleanIni.cmd
+
+Dann erzeugen Sie ein Programmobjekt fr NewMonthGadget.cmd und legen es in Ihren 
+Systemstart Ordner ab.
+
+Die CleanIni.cmd Datei kann ntzlich sein, wenn Sie Ihr Gadget individuell ver„ndern m”chten 
+(siehe unten). Wenn Sie w„hrend der nderungen etwas falsch gemacht haben, das Sie dann 
+wieder rckg„ngig machen m”chten: CleanIni s„ubert die WPSWizard INI Datei, damit das Gadget 
+zum ursprnglichen Zustand zurckkehrt. Beachten Sie, daá normalerweise sich die WPSWIZZ.INI Datei 
+in Ihrem Home Verzeichnis befindet.
+
+
+Upgrade
+^^^^^^^ 
+Kopieren Sie einfach die neuen Dateien ber die alten. Sie mssen vermutlich CleanIni.cmd 
+laufen lassen, um den neuen Font zu erhalten (siehe nderungsliste unten vom 2006-02-21).
+
+Sie k”nnen jetzt den Wochenanfang am Sonntag anstatt am Montag haben: siehe Installation 
+und die nderungsliste unten vom 2006-03-13. 
+
+Wenn Sie  die Wochenzahl Anzeigespalte nicht m”gen, eingefhrt am 2006-02-21, k”nnen Sie die
+"- noweek" Version des Gadget (Sie mssen die in Verbindung stehende xl8 Datei auch kopieren) verwenden.
+
+
+Ich m”chte das Gadget anpassen!!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Sie k”nnen das Gadget anpassen, auch ohne rexx und/oder Gadgets Kenntnisse zu haben, indem 
+Sie einfach drag and drop fr Fonts und Farben verwenden.
+
+Als erstes m”chten Sie vermutlich das Gadget auf Ihrem Desktop verschieben, aber Sie k”nnen 
+es nicht einfach verschieben, weil das Gadget in den Desktop eingebettet ist.
+Um es zu verschieben: CTRL+Click (linke Maustaste) auf das Gadget. Sie sehen dann das Quadrat 
+des Gadgets, das Sie mit der Maus verschieben k”nnen. Sobald Sie mit der Position zufrieden 
+sind, drcken Sie wieder CTRL+Click (linke Maustaste) um zu seinem eingebetteten Zustand 
+zurck zu kehren. 
+
+Wenn Sie andere Einstellungen fr das Gadget machen m”chten, CTRL+Click (linke Maustaste) und 
+dann die rechte Maustaste auf das Gadget. Dies ”ffnet ein Kontextmenue mit einigen Eintragungen:
+
+- Beende Gadget: dies schlieát das Gadget (und speichert nderungen)
+- entsperre Kinder: (siehe unten) 
+- kein Rand, Rand, eingesunkener Rand, farbiger Rand: dies ver„ndert oder entfernt den Rand 
+  um das Gadget. (Sie k”nnen einen farbigen Rand im newcalendar1.png Bild sehen)
+- vorheriger Monat, aktueller Monat, n„chster Monat: dies „ndert den anzeigenden Monat
+
+Lassen Sie mich den Kontextmenue-Eintrag "entsperre Kinder" erkl„ren: ein Gadget kann mit 
+einigen Unter-Gadgets (oder "Kindern" erstellt werden), das ist bei dem NewMonthGadget der Fall, 
+das mit sechs Kindern erstellt wurde. Wir erkl„ren sie nun von links oben beginnend: 
+
+- die Tageszahl
+- der Monats Name
+- der Schatten des Monatsnamens
+- das Jahr
+- der Schatten der Jahreszahl
+- der Monatskalender
+
+Sobald Sie die Kinder entsperrt haben, wieder CTRL-Click (linke Maustaste) auf das Gadget, um 
+es zu seinem eingebetteten Zustand zurck zu bringen. Wenn Sie jetzt CTRL+Click (linke Maustaste) 
+auf einen Kindbereich machen, kann das einzelne Kind editiert werden, NICHT das vollst„ndige Gadget.
+
+Sie k”nnen nun jedes einzelne Kind jetzt verschieben oder die Groáe ver„ndern und mit drag and drop 
+lassen sich ein anderer Font oder -farbe auf das Gadgetkind werfen. Sobald Sie mit den Resultaten 
+zufrieden sind, CTRL+Click (linke Maustaste) auf das Gadgetkind, um es zum eingebetteten Zustand 
+zurck zu bringen, dann CTRL+Click (linke Maustaste) auf einem Bereich ausserhalb von irgendwelchen 
+Gadgetkindern (der einfachste Punkt ist unten links), um das Haupt-Gadget (Container) zu erreichen. 
+Sie k”nnen nun im Kontextmen mit "sperre Kinder" schlieáen, um zu seinem Ausgangszustand zurck 
+zu kehren. An diesem Punkt empfehle ich, das Gadget zu beenden und wieder zu ”ffnen, um die 
+Speicherung Ihrer ge„nderten Einstellungen zu erzwingen.
+
+
+Wie erreichen Sie Transparenz?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Kurze Erkl„rung: Es gibt sie nicht ;-) 
+
+Lange Erkl„rung: In der newcalendar2.png Bild k”nnen Sie ein scheinbar transparentes Gadget sehen. 
+Das gcalendar.gif Bild hat wirklich Transparentinformationen, aber das Verfahren der 
+OS/2-eCS Multimedia I/O, die fr die Messwerte und das Anzeigen von GIF Bildern verantwortlich sind 
+(oder von irgendeinem anderen untersttzten transparenten Bildformat) sind nicht zum Verwenden 
+dieser Informationen geeignet. Der Entwickler des PNGIO I/O proc (auf der eComStation BetaZone) sagt 
+in der "readme", daá er Untersttzung fr Transparentz im n„chsten Hauptrelease einbauen m”chte, 
+also k”nnten wir ein transparentes Gadget in der Zukunft haben.
+Das newcalendar2.png Bild wird erreicht, indem man den Hintergrund des Kalenderbilds (gcalendar.gif) 
+so „ndert, dass es die gleiche Hintergrundfarbe wie der Desktop hat. Sie k”nnen es auch mit einem 
+Bildbearbeitungs-Programm und etwas Phantasie ver„ndern.
+
+
+nderungsliste
+^^^^^^^^^^^^^^ 
+2006-05-15
+- Bug behoben: das Gadget wurde nicht richtig nach Monat nderung aktualisiert.
+- hinzugefgt das "noweek" Gadget fr diejenigen, die die Wochenzahl Anzeigespalte nicht m”gen.
+
+2006-03-21
+- šbersetzungs-Kid hinzugefgt: alle sprachabh„ngigen Zeichen sind in der Datei NewMonthGadget.xl8 
+  enthalten. Wenn Sie eine Sprache hinzufgen m”chten, folgen Sie einfach der Struktur und fgen 
+  Ihre bersetzten Bezeichnungen hinzu. 
+- das Gadget paát sich automatisch, der Sprache des Systems an, wenn vorhanden, indem es die
+  LANG variablen liest; es f„llt sonst ins Englische zurck.
+- italienische šbersetzung hinzugefgt.
+- deutsche šbersetzung fr das neue kit ge„ndert.
+- "german" Ordner  in "intl_docs" Ordner ge„ndert: Es enth„lt nun die bersetzten "readme" Dateien.
+- die editierbaren Variablen an den Anfang des Gadget Codes verschoben, um nderungen zu vereinfachen.
+
+2006-03-13
+- Option zum ndern des Wochenanfangs (Sonntag oder Montag) hinzugefgt. Sie mssen den Wert fr 
+  den Wochenanfang im Script „ndern (Zeile 60).
+- BuildLevel Information zum Gadget hizugefgt.
+- Den "backgrounds" Ordner hinzugefgt, um vom User erzeugte Hintergrundbilder fr das Gadget 
+  abzulegen. Zur Zeit enth„lt es nur einen neuen Hintergrund von David Graser.
+  Wenn Sie es verwenden m”chten, dann benennen Sie es in gcalendar.gif um und berschreiben das 
+  Orginal.
+- "german" Ordner hinzugefgt, in der sich die deutsche šbersetzung befindet. Es enth„lt die deutsche 
+  šbersetzung von Rudolf H”ger. Das bersetzte Gadget ist die 2006-02-21 Version, aber ich denke nicht, 
+  daá dies ein Problem ist, da deutsche Benutzer sich mit der Woche wohl fhlen sollten, die am Montag 
+  beginnt ;-) Zuknftig m”chte ich eine bequemere Art zum bersetzen des Gadget zur Verfgung stellen, 
+  durch Entkoppeln des Codes von den strings. 
+
+2006-02-21
+- Wochenzahl zum Kalender hinzugefgt (gewnschtes Feature).
+- ge„nderter Grundkalender Font, um eine neuen Spalte unterzubringen.
+- aktualisierte screenshots, um die neuen Eigenschaft zu zeigen.
+- 'Upgrade' Abschnitt in der readme.txt Datei hinzugefgt.
+
+2006-02-09
+- ge„ndertes popup Men, um intuitiver zu sein.
+- ge„ndert "childs" "Children" ;-)
+
+2006-02-07
+- erstes ”ffentliches Release.
+
+2004-03-24
+- erstes internes Release.
+
+
+Links
+^^^^^ 
+Innotek Font-Engine:
+ http://download.innotek.de/ft2lib/InnoTek_FT2LIB_260_Beta1.exe 
+
+MS Core Web Fonts Downloader:
+ http://www.ecomstation.org/vitalfiles/MSFONTPACK1_2-fixed.zip
+
+Feffer (Front-End For Font Engine Registry): 
+ http://www.os2world.com/forum/Public/Uploads/Post-83-68-feffer_0_9_2.zip (Unterseite) 
+ http://www.os2world.com/forum/Public/Uploads/Post-83-94-FFR093.ZIP (Update)
+
+
+Danksagungen
+^^^^^^^^^^^^
+Dank an Chris Wohlgemuth fr sein groáartiges WPSWizard und fr all seine ganze unermdliche 
+Arbeit an Erweiternungen von OS/2 und dessen Verbesserungen. Dieses kleine Gadget ist 
+ein Zeichen der Anerkennung und es ist als das erste, einer Reihe weiterer Gadgets beabsichtigt. 
+Ich hoffe, daá dies die Leute anspornt, das gleiche zu tun... WPSWizard hat ein grosses Potential. 
+Chris, Sie k”nnen dieses Gadget in einem folgenden Release von WPSWizard gerne mitverwenden, 
+wenn Sie m”gen. 
+
+Dank an David Graser fr seine Mhe an einem neuen Hintergrundbild fr das Gadget.
+
+Dank an Rudolf H”ger fr die deutsche šbersetzung des Gadget.
+
+Dank an Serenity-Systeme fr die  eComStation und fr das lebendig halten und die 
+Weiterentwicklung von OS/2. 
+
+Dank an alle, die dieses kleine Gadget benutzen und m”gen. Schreiben Sie mir bitte, 
+wenn Sie es verwenden, ich wrde es gern wissen!
+
+
+Viel Freude damit! 
+                
+                
+                
+                Cris 
+                
+                (criguada _am_ libero .dot. it)
+
